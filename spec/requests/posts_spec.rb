@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Posts controller", type: :request do
+RSpec.describe 'Posts controller', type: :request do
   describe 'Index method' do
     it 'Renders the index view' do
       get '/users/1/posts'
