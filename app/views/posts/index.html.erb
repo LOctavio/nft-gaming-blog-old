@@ -1,1 +1,9 @@
-<h1>Here is a list of posts for a given user</h1>
+<%= render "shared/user", user: @user %>
+<% @posts.each do |post| %>
+  <%= render "shared/post_preview", post: post %>
+  <div class="comments-preview">
+    <% post.most_recent_comments.each do |comment| %>
+      <span><%= comment.author.name %>: <%= comment.text %></span>
+    <% end %>
+  </div>
+<% end %>
