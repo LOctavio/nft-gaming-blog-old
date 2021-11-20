@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     if @comment.save
-      redirect_to :action=>"show", :controller=>"posts", :user_id => params[:user_id], :id => params[:post_id]
+      redirect_to action: 'show', controller: 'posts', user_id: params[:user_id], id: params[:post_id]
     else
       render :new
     end
