@@ -7,9 +7,10 @@ class CommentsController < ApplicationController
   def create
     @comment = current_user.comments.build(comment_params)
     if @comment.save
+      flash[:alert] = "You have successfully created a comment"
       redirect_to action: 'show', controller: 'posts', user_id: params[:user_id], id: params[:post_id]
     else
-      render :new
+      render :new, notice: "This is an invalid comment"
     end
   end
 
