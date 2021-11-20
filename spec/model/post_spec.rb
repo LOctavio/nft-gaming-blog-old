@@ -1,12 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  subject {Post.new(title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0, author_id: 1)}
+  subject do
+    Post.new(title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0, author_id: 1)
+  end
 
-  before {
-    user = User.create(id: 1, name: 'Luis', photo: 'photo-url', bio: 'bio', post_counter: 0)
+  before do
+    User.create(id: 1, name: 'Luis', photo: 'photo-url', bio: 'bio', post_counter: 0)
     subject.save
-  }
+  end
 
   it 'Title must not be blank' do
     subject.title = ''
