@@ -4,5 +4,11 @@
     <span>Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %></span>
   </div>
   <span><%= @post.text %></span>
+  <p>
+    Like
+    <%= link_to user_post_likes_path(@user, @post), method: :post do %>
+      <i class="far fa-thumbs-up"></i>
+    <% end %>
+  </p>
 </div>
 <%= render "shared/comments", comments: @post.comments %>
