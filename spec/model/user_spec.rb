@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   subject { User.new(name: 'Luis', photo: 'photo-url', bio: 'bio', post_counter: 0) }
 
-  before {
+  before do
     subject.save
-    subject.posts.create(id: 1,title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0)
-    subject.posts.create(id: 2,title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0)
-    subject.posts.create(id: 3,title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0)
-    subject.posts.create(id: 4,title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0)
-  }
+    subject.posts.create(id: 1, title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0)
+    subject.posts.create(id: 2, title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0)
+    subject.posts.create(id: 3, title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0)
+    subject.posts.create(id: 4, title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0)
+  end
 
   it 'Name must not be blank' do
     subject.name = ''

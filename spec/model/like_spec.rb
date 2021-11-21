@@ -7,7 +7,8 @@ RSpec.describe Comment, type: :model do
 
   before do
     User.create(id: 1, name: 'Luis', photo: 'photo-url', bio: 'bio', post_counter: 0)
-    Post.create(id: 1, title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0, author_id: 1)
+    Post.create(id: 1, title: 'New post', text: 'this is a new post', comments_counter: 0, likes_counter: 0,
+                author_id: 1)
     subject.save
   end
 
