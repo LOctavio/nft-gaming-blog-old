@@ -8,6 +8,12 @@ RSpec.describe Post, type: :model do
   before do
     User.create(id: 1, name: 'Luis', photo: 'photo-url', bio: 'bio', post_counter: 0)
     subject.save
+    subject.comments.create(id: 1, text: 'new comment', author_id: 1)
+    subject.comments.create(id: 2, text: 'new comment', author_id: 1)
+    subject.comments.create(id: 3, text: 'new comment', author_id: 1)
+    subject.comments.create(id: 4, text: 'new comment', author_id: 1)
+    subject.comments.create(id: 5, text: 'new comment', author_id: 1)
+    subject.comments.create(id: 6, text: 'new comment', author_id: 1)
   end
 
   it 'Title must not be blank' do
@@ -28,5 +34,17 @@ RSpec.describe Post, type: :model do
   it 'LikesCounter must be an integer greater than or equal to zero.' do
     subject.likes_counter = 0
     expect(subject).to be_valid
+  end
+
+  context 'most_recent_comments method' do
+    it 'Must return 3 posts' do
+      expect(subject.most_recent_comments.length).to be(5)
+    end
+  end
+
+  context 'update_posts_counter method' do
+    it 'Must increment posts_counter by 1' do
+      expect(subject.author.post_counter).to be(1)
+    end
   end
 end
