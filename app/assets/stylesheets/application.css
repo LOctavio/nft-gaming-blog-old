@@ -45,3 +45,32 @@
 .posts-counter {
   margin-top: 80px;
 }
+
+.box {
+  display: flex;
+  flex-direction: column;
+  border: 2px black solid;
+  padding: 20px;
+}
+
+.box > .title {
+  margin-bottom: 20px;
+}
+
+.bio {
+  margin-bottom: 30px;
+}
+
+.post {
+  margin: 10px 0;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.counter {
+  text-align: right;
+}
