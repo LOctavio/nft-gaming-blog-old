@@ -4,11 +4,7 @@
     <div class="post-and-comments">
       <%= render "shared/post", post: post %>
       <div class="box">
-        <% if post.comments_counter.zero? %>
-          <span>No comments</span>
-        <% else %>
-          <%= render "shared/comments", comments: post.most_recent_comments %>
-        <% end %>
+        <%= render "shared/comments", post: post, comments: post.most_recent_comments %>
       </div>
     </div>
   <% end %>
