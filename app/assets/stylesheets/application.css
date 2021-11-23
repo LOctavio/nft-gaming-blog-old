@@ -78,3 +78,12 @@
 .post-and-comments {
   margin: 40px 0;
 }
+
+.post-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment {
+  margin: 20px 0;
+}
