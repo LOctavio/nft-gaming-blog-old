@@ -74,3 +74,12 @@
 .counter {
   text-align: right;
 }
+
+.comments {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-and-comments {
+  margin: 40px 0;
+}

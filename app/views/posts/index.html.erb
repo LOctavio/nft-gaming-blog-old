@@ -1,1 +1,13 @@
-<h1>Here is a list of posts for a given user</h1>
+<%= render "shared/user", user: @user %>
+<% @posts.each do |post| %>
+  <div class="post-and-comments">
+    <%= render "shared/post", post: post %>
+    <div class="comments box">
+      <% if post.comments_counter.zero? %>
+        <span>No comments</span>
+      <% else %>
+        <%= render "shared/comments", comments: post.most_recent_comments %>
+      <% end %>
+    </div>
+  </div>
+<% end %>
