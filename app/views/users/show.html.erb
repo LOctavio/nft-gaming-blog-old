@@ -4,7 +4,9 @@
   <span><%= @user.bio %></span>
 </div>
 <% @posts.each do |post| %>
-  <%= render "shared/post", post: post %>
+  <%= link_to user_post_path(@user, post) do %>
+    <%= render "shared/post", post: post %>
+  <% end %>
 <% end %>
 <div class="button-container">
   <%= button_to "See all posts", user_posts_path(@user),:class => "posts-button", :method => :get %>
