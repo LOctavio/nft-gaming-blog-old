@@ -3,7 +3,7 @@
   <%= link_to user_post_path(@user, post) do %>
     <div class="post-and-comments">
       <%= render "shared/post", post: post %>
-      <div class="comments box">
+      <div class="box">
         <% if post.comments_counter.zero? %>
           <span>No comments</span>
         <% else %>
