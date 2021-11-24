@@ -1,1 +1,13 @@
-<h1>Here is the info of a given user</h1>
+<%= render "shared/user", user: @user %>
+<div class="bio box">
+  <span class="title">Bio</span>
+  <span><%= @user.bio %></span>
+</div>
+<% @user.most_recent_posts.each do |post| %>
+  <%= link_to user_post_path(@user, post) do %>
+    <%= render "shared/post", post: post %>
+  <% end %>
+<% end %>
+<div class="button-container">
+  <%= button_to "See all posts", user_posts_path(@user),:class => "posts-button", :method => :get %>
+</div>

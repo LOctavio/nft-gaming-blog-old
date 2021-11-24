@@ -1,0 +1,10 @@
+<% if post.comments_counter.zero? %>
+  <span>No comments</span>
+<% else %>
+  <% comments.each do |comment| %>
+    <div>
+      <span><%= comment.author.name %>: </span>
+      <span><%= comment.text %></span>
+    </div>
+  <% end %>
+<% end %>

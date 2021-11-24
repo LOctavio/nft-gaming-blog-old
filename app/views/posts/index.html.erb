@@ -1,1 +1,11 @@
-<h1>Here is a list of posts for a given user</h1>
+<%= render "shared/user", user: @user %>
+<% @posts.each do |post| %>
+  <%= link_to user_post_path(@user, post) do %>
+    <div class="post-and-comments">
+      <%= render "shared/post", post: post %>
+      <div class="box">
+        <%= render "shared/comments", post: post, comments: post.most_recent_comments %>
+      </div>
+    </div>
+  <% end %>
+<% end %>
