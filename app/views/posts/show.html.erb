@@ -1,3 +1,6 @@
+<% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+<% end -%>
 <div class="box">
   <span class="title post-title">
     <span><%= @post.title %> by <%= @post.author.name %></span>

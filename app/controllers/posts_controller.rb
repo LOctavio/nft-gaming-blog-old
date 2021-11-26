@@ -18,9 +18,9 @@ class PostsController < ApplicationController
     @user = User.find(current_user.id)
     @post = @user.posts.new(post_params)
     if @post.save
-      redirect_to user_posts_path(current_user)
+      redirect_to user_posts_path(current_user), notice: 'You have successfully created a post'
     else
-      render :new
+      redirect_to new_post_path, notice: 'This is an invalid post'
     end
   end
 
