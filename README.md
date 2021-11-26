@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# nft gaming blog
 
 > The NFT gaming app is a blog website where users can make posts about the world of NFT gaming. This website show the list of posts and empower readers to interact with them by adding comments and liking posts.
 
