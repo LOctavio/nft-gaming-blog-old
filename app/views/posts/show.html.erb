@@ -7,6 +7,12 @@
     </span>
   </span>
   <span><%= @post.text %></span>
+  <p>
+    Like
+    <%= link_to user_post_likes_path(@user, @post), method: :post do %>
+      <i class="far fa-thumbs-up"></i>
+    <% end %>
+  </p>
 </div>
 <div class="comment box">
   <%= render "shared/comments", post: @post, comments: @post.comments %>
