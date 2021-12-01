@@ -27,6 +27,7 @@ To get a local copy up and running follow these simple example steps.
 - Open the terminal
 - Open the project's folder
 - Run 'bundle install' to install all the dependencies
+- Run 'rails db:migrate' to migrate the database localy
 
 ### Usage
 
