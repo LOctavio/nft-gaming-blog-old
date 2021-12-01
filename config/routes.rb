@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: 'users/registrations' }
+  devise_for :users, controllers: { 
+    registrations: 'users/registrations',
+    sessions: 'users/sessions'
+  }
   devise_scope :user do
-    get "/login" => "devise/sessions#new"
-    get "/logout" => "devise/sessions#destroy"
+    get "/login" => "users/sessions#new"
+    get "/logout" => "users/sessions#destroy"
+    get "/register" => "users/registrations#new"
   end                                                                            
   root 'users#index'
   resources :users, only: [:index, :show] do
@@ -12,5 +16,4 @@ Rails.application.routes.draw do
     end
   end
   get '/new_post', to: 'posts#new'
-  get '/login', to: 'devise/sessions#new'
 end
