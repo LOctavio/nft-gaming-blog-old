@@ -1,6 +1,3 @@
-<% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name %>
-<% end -%>
 <%= form_with url: user_post_comments_path do |form| %>
   <%= form.label :text %>
   <%= form.text_field :text %>
