@@ -5,6 +5,9 @@
     <div>
       <span><%= comment.author.name %>: </span>
       <span><%= comment.text %></span>
+      <% if can? :read, comment %>
+        <%= button_to "delete", {:controller => "comments", :action => "destroy", :user_id => comment.author,:post_id => comment.post, :id=> comment}, :method => :delete %>
+      <% end %>
     </div>
   <% end %>
 <% end %>

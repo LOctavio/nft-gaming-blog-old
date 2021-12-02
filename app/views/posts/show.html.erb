@@ -14,8 +14,8 @@
     <% end %>
   </p>
   <% if can? :read, @post %>
-      <%= button_to "delete", user_post_path(@post), :method => :delete %>
-    <% end %>
+    <%= button_to "delete", user_post_path(@post), :method => :delete %>
+  <% end %>
 </div>
 <div class="comment box">
   <%= render "shared/comments", post: @post, comments: @post.comments %>
