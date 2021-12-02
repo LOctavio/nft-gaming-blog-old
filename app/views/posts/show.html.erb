@@ -1,6 +1,3 @@
-<% flash.each do |name, msg| -%>
-  <%= content_tag :div, msg, class: name %>
-<% end -%>
 <div class="box">
   <span class="title post-title">
     <span><%= @post.title %> by <%= @post.author.name %></span>
@@ -16,6 +13,9 @@
       <i class="far fa-thumbs-up"></i>
     <% end %>
   </p>
+  <% if can? :read, @post %>
+    <%= button_to "delete", user_post_path(@post), :method => :delete %>
+  <% end %>
 </div>
 <div class="comment box">
   <%= render "shared/comments", post: @post, comments: @post.comments %>
